@@ -1,0 +1,26 @@
+{
+  "name": "ediya",
+  "version": "1.0.0",
+  "description": "**[이듬(E.UID)](https://euid.dev) 블렌디드 러닝, 학습용(디자인 → 개발)** 으로 제작된 [이디야 커피 브랜드 사이트](https://seulbinim.github.io/EDIYA/)입니다.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run serve & npm run sass",
+    "serve": "live-server",
+    "sass": "sass --watch --load-path=node_modules sass:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seulbinim/EDIYA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seulbinim/EDIYA/issues"
+  },
+  "homepage": "https://github.com/seulbinim/EDIYA#readme",
+  "dependencies": {
+    "@euid/scss-mixins": "^0.2.0",
+    "sass": "^1.32.6"
+  }
+}

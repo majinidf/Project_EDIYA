@@ -1,0 +1,7 @@
+@import './common/common';
+@import './layout/layout';
+@import '@euid/scss-mixins';
+
+.cle {
+	@include font-size-padding($font-size:number, $padding:[number, string, list])
+}

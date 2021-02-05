@@ -1,0 +1,17 @@
+/* Error: "전달 받은 number 값은 숫자 유형이 아닙니다."
+ *   ,
+ * 6 |     @include font-size-padding($font-size:number, $padding:[number, string, list])
+ *   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   sass\index.scss 6:2  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: "\c804 \b2ec  \bc1b \c740  number \ac12 \c740  \c22b \c790  \c720 \d615 \c774  \c544 \b2d9 \b2c8 \b2e4 ."\a   \2577 \a 6 \2502      @include font-size-padding($font-size:number, $padding:[number, string, list])\d\a   \2502      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\index.scss 6:2  root stylesheet';
+}
