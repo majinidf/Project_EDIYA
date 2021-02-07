@@ -20,38 +20,38 @@
     <link rel="preconnect" href="//cdnjs.cloudflare.com" />
     <link rel="preload" as="style" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" />
     <link rel="preload" as="style" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-    <link rel="preload" as="style" href="./css/style.css" />
-    <link rel="preload" as="script" href="./js/utils/dom.js" />
-    <link rel="preload" as="script" href="./js/navigationControl.js" />
-    <link rel="preload" as="script" href="./js/goToTopControl.js" />
-    <link rel="preload" as="image" href="./images/brand.svg" />
-    <link rel="preload" as="image" href="./images/brand-dark.svg" />
-    <link rel="preload" as="image" href="./images/button-navigation.svg" />
-    <link rel="prefetch" as="image" href="./images/coffee-desktop.jpg" />
-    <link rel="prefetch" as="image" href="./images/coffee-mobile.jpg" />
-    <link rel="prefetch" as="image" href="./images/icon-arrow-disabled.svg" />
-    <link rel="prefetch" as="image" href="./images/icon-arrow-white.svg " />
-    <link rel="prefetch" as="image" href="./images/icon-visible.svg" />
-    <link rel="prefetch" as="image" href="./images/icon-warning.svg" />
-    <link rel="prefetch" as="image" href="./images/icon-invisible.svg" />
-    <link rel="prefetch" as="image" href="./images/icon-checked.svg" />
-    <link rel="prefetch" as="image" href="./media/coffee-latte-art-cover.png" />
-    <link rel="prefetch" as="video" href="./media/coffee-latte-art.mp4" />
+    <link rel="preload" as="style" href="./assets/css/style.css" />
+    <link rel="preload" as="script" href="./assets/js/utils/dom.js" />
+    <link rel="preload" as="script" href="./assets/js/navigationControl.js" />
+    <link rel="preload" as="script" href="./assets/js/goToTopControl.js" />
+    <link rel="preload" as="image" href="./assets/images/brand.svg" />
+    <link rel="preload" as="image" href="./assets/images/brand-dark.svg" />
+    <link rel="preload" as="image" href="./assets/images/button-navigation.svg" />
+    <link rel="prefetch" as="image" href="./assets/images/coffee-desktop.jpg" />
+    <link rel="prefetch" as="image" href="./assets/images/coffee-mobile.jpg" />
+    <link rel="prefetch" as="image" href="./assets/images/icon-arrow-disabled.svg" />
+    <link rel="prefetch" as="image" href="./assets/images/icon-arrow-white.svg " />
+    <link rel="prefetch" as="image" href="./assets/images/icon-visible.svg" />
+    <link rel="prefetch" as="image" href="./assets/images/icon-warning.svg" />
+    <link rel="prefetch" as="image" href="./assets/images/icon-invisible.svg" />
+    <link rel="prefetch" as="image" href="./assets/images/icon-checked.svg" />
+    <link rel="prefetch" as="image" href="./assets/media/coffee-latte-art-cover.png" />
+    <link rel="prefetch" as="video" href="./assets/media/coffee-latte-art.mp4" />
 
     <!-- 스타일링 -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon" />
 
     <!-- 스크립트: 즉시 실행 -->
-    <script src="./js/utils/dom.js"></script>
-    <script src="./js/utils/mixins.js"></script>
-    <script src="./js/utils/isDevelopmentMode.js"></script>
-    <script src="./js/polyfills/unfetch.js"></script>
-    <script src="./js/components/navigation/Navigation.js"></script>
-    <script src="./js/components/navigation/NavigationItem.js"></script>
+    <script src="./assets/js/utils/dom.js"></script>
+    <script src="./assets/js/utils/mixins.js"></script>
+    <script src="./assets/js/utils/isDevelopmentMode.js"></script>
+    <script src="./assets/js/polyfills/unfetch.js"></script>
+    <script src="./assets/js/components/navigation/Navigation.js"></script>
+    <script src="./assets/js/components/navigation/NavigationItem.js"></script>
 
     <!-- 스크립트: DOM 콘텐츠 준비 이후 실행 -->
-    <script src="./js/navigationControl.js" defer></script>
+    <script src="./assets/js/navigationControl.js" defer></script>
 
     <script>
       (function buttonGoToTop() {
@@ -136,14 +136,16 @@
   </head>
 
   <body>
+    <h1 class="a11y-hidden">EDIYA COFFEE - 이디야 커피에 오신걸 환영 합니다.</h1>
+
     <div class="app-header-container">
       <header class="app-header">
-        <h1 class="brand">
-          <a href="./index.html"><img src="./images/brand.svg" alt="Ediya Coffee" class="respons" /></a>
-        </h1>
-        <button type="button" class="button is-open-menu" aria-label="메뉴 열기" title="메뉴 열기">
-          <span class="ir"></span>
-        </button>
+        <div class="brand">
+          <a href="./index.html"><img src="./assets/images/brand.svg" alt="Ediya Coffee" class="respons" /></a>
+        </div><!-- /.brand -->
+
+        <button type="button" class="button is-open-menu" aria-label="메뉴 열기" title="메뉴 열기"><span class="ir"></span></button>
+        
         <nav class="app-navigation">
           <h2 class="a11y-hidden">메인 메뉴</h2>
 
@@ -159,7 +161,8 @@
           </button>
         </nav>
       </header>
-    </div>
+    </div><!-- /.app-header-container -->
+
     <main class="app-main home">
       <div class="ediya-recommend-container">
         <section class="ediya-recommend">
@@ -168,10 +171,10 @@
           <p class="ediya-recommend-text">늘 당신 곁에, 이디야 커피의 다양한 메뉴를 맛보세요.</p>
           <ul class="ediya-recommend-list reset-list">
             <li class="ediya-recommend-beverage">
-              <img src="./images/cheese-cookie.png" alt="치즈가 쿠키했대 쉐이크 - Cheese Shake" />
+              <img src="./assets/images/cheese-cookie.png" alt="치즈가 쿠키했대 쉐이크 - Cheese Shake" />
             </li>
             <li class="ediya-recommend-beverage">
-              <img src="./images/choco-rice.png" alt="초코 묻고 더블 쉐이크와 밥대신 라이스 쉐이크- Choco Shake and Rice Shake" />
+              <img src="./assets/images/choco-rice.png" alt="초코 묻고 더블 쉐이크와 밥대신 라이스 쉐이크- Choco Shake and Rice Shake" />
             </li>
           </ul>
           <a href="./views/beverage.html" class="go-menu">메뉴보기</a>
@@ -234,10 +237,11 @@
         </div>
       </div>
     </main>
+    
     <footer class="app-footer">
       <div class="footer-container">
         <div class="footer-brand">
-          <img src="./images/brand-dark.svg" alt="EDIYA COFFEE" />
+          <img src="./assets/images/brand-dark.svg" alt="EDIYA COFFEE" />
         </div>
         <ul class="guide-list reset-list">
           <li><a href="#">개인정보처리방침</a></li>

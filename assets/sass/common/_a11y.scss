@@ -1,0 +1,5 @@
+@import '@euid/scss-mixins';
+
+.a11y-hidden {
+	@include a11y-hidden();
+}

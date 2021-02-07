@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run serve & npm run sass",
     "serve": "live-server",
-    "sass": "sass --watch --load-path=node_modules sass:css"
+    "sass": "sass --watch --load-path=node_modules ./assets/sass:./assets/css"
   },
   "repository": {
     "type": "git",
