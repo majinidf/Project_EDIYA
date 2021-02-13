@@ -1,3 +1,41 @@
-ul {
-	list-style: none;
+@import '@euid/scss-mixins';
+
+@include initialize(true);
+
+ul,
+ol {
+	@include reset-list;
+}
+
+dl {
+	@include reset-dl;
+}
+
+a {
+	@include reset-link;
+}
+
+button,
+[type=button],
+[type=submit],
+[type=reset] {
+	@include reset-button;
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+address {
+	font-style: normal;
+}
+
+input[type=text],
+input[type=password],
+input[type=search] {
+	@include appearance;
+}
+
+@include selection() {
+	color: red;
+	background-color: aqua;
 }

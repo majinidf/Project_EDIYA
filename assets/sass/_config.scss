@@ -1,0 +1,36 @@
+$breakpoints: (
+  'mobile': 768px
+);
+
+$colors: (
+  primary-blue01: #24388d,
+  primary-blue02: #5b6aa9,
+  primary-blue03: #919bc6,
+  primary-blue04: #c8cde2,
+  secondary-lblue01: #bae5fb,
+  secondary-lblue02: #cbebfc,
+  secondary-lblue03: #dcf2fd,
+  secondary-lblue04: #eef8fe,
+  secondary-violet01: #31287c,
+  secondary-violet02: #645e9d,
+  secondary-violet03: #9893bd,
+  secondary-violet04: #cbc9de,
+  tertiary-amber01: #d2c9b6,
+  tertiary-amber02: #ddd6c8,
+  tertiary-amber03: #e8e4da,
+  tertiary-amber04: #f4f1ed,
+  tertiary-cream01: #f4ca54,
+  tertiary-cream02: #f7d77f,
+  tertiary-cream03: #f9e4a9,
+  tertiary-cream04: #fcf2d4,
+  accent-white01: #fefefe,
+  accent-black01: #0f0f0f,
+  accent-lgray01: #878787,
+  accent-snow01: #f5f5f5,
+  border-lb: #d1eff1,
+  border-casablanca: #f6b45a,
+  border-tamble: #dab57e,
+  bg-blue: linear-gradient(137.4deg, #263d83 3.86%, #102457 100%),
+  bg-cream: linear-gradient(222.97deg, #fcf2d4 0%, #f4ca54 96.7%),
+  bg-lblue: linear-gradient(139.57deg, #eef8fe 2.58%, #bae5fb 93.13%),
+);

@@ -1,263 +1,146 @@
 @import '@euid/scss-mixins';
+@import '../config';
 
 .app-header-container {
 	.app-header {
 		position: relative;
-		height: 50px;
 
-		@include media('>769px') {
+		@include media('<=mobile') {
+			height: rem(50px);
+		}
+
+		@include media('>mobile') {
+			@include flex-container(justify-start items-center);
 			width: 740px;
+			height: 50px;
 			margin: 0 auto;
 		}
 	}
 
 	.brand {
-		$pad: 18px;
-		padding: $pad 0 0 $pad;
-
-		img {
-			width: 140px;
-			height: 14px;
+		@include media('<=mobile') {
+			$pad: 18px;
+			padding: rem($pad) 0 0 rem($pad);
+			padding: rem($pad) 0 0 rem($pad);
+			//@include space(rem(18px), r);
 		}
 
-		@include media('>769px') {
-			padding: $pad 0 0 0;
+		img {
+			@include media('<=mobile') {
+				width: rem(140px);
+				height: rem(14px);
+			}
+	
+			@include media('>mobile') {
+				width: 140px;
+				height: 14px;
+			}
 		}
 	}
 
 	.app-navigation {
-		display: none;
-		position: fixed;
-		z-index: 10;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		padding: 66px 10px 0;
-		background: rgba(20, 24, 44, 1);
+		@include media('<=mobile') {
+			display: none;
+			position: fixed;
+			z-index: 10;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			padding: rem(66px) rem(10px) 0;
+			background: rgba(20, 24, 44, 1); // alt-color()
 
-		&.is-active {
-			display: block;
+			&.is-active {
+				display: block;
+			}
 		}
 
-		@include media('>769px') {
-			display: block;
-			position: absolute;
-			left: auto;
-			top: 50%;
-			bottom: auto;
-			transform: translateY(-50%);
-			padding: 0;
-			background: none;
+		@include media('>mobile') {
+			margin-left: auto;
 		}
 	}
 
 	.reset-list {
-		margin: 0;
-		padding: 0;
-
 		li {
-			border-bottom: 1px solid $primary-blue02;
+			@include media('<=mobile') {
+				border-bottom: 1px solid get-color(primary-blue02);
+			}
 
-			@include media('>769px') {
+			@include media('>mobile') {
 				display: inline-block;
-				padding: 0 0 0 8px;
-				border: 0;
+				margin-left: 8px;
 			}
 		}
 		
 		a {
-			display: block;
-			margin: 0 -10px;
-			padding: 12px 22px;
-			font-size: 14px;
-			color: $tertiary-white01;
-			line-height: 15px;
-			text-decoration: none;
+			@include media('<=mobile') {
+				display: block; // @include show()
+				@include mx(-10px);
+				@include font-size-padding(14, 12px 22px);
+				color: get-color(accent-white01);
+				line-height: rem(15px);
 
-			@include media('>769px') {
-				margin: 0;
-				padding: 0;
-				font-size: 15px;
-				color: $primary-blue01;
+				&:hover {
+					background: get-color(primary-blue01);
+				}
 			}
 
-			&:hover {
-				background: $primary-blue01;
-
-				@include media('>769px') {
-					background: none;
-				}
+			@include media('>mobile') {
+				font-size: 15px;
+				color: get-color(primary-blue01);
 			}
 		}
 	}
 
 	.button {
-		padding: 0;
-		border: 0;
-		background: none;
-
 		&.is-open-menu {
-			$size: 50px;
-			$pos: 0;
-	
-			position: absolute;
-			right: $pos;
-			top: $pos;
-			width: $size;
-			height: $size;
-	
-			.ir {
-				display: block;
-				cursor: pointer;
-				width: 18px;
-				height: 14px;
-				margin: auto;
-				background: url(../images/button-navigation.svg) no-repeat 50%;
+			@include media('<=mobile') {
+				$pos: 0;
+				$size: rem(50px);
+		
+				@include absolute(r $pos t $pos);
+				width: $size;
+				height: $size;
+		
+				.ir {
+					display: block; // @include show()
+					width: rem(18px);
+					height: rem(14px);
+					margin: auto;
+					background: url(../images/button-navigation.svg) no-repeat 50%;
+				}
 			}
 	
-			@include media('>769px') {
-				display: none;
+			@include media('>mobile') {
+				display: none; // @include hide()
 			}
 		}
 
 		&.is-close-menu {
-			$pos: 8px;
-			$size: 50px;
+			@include media('<=mobile') {
+				$pos: rem(8px);
+				$size: rem(50px);
+	
+				@include absolute(r $pos t $pos);
+				@include flex-container(justify-center items-center);
+				width: $size;
+				height: $size;
+			}
 
-			position: absolute;
-			right: $pos;
-			top: $pos;
-			width: $size;
-			height: $size;
-
-			@include media('>769px') {
+			@include media('>mobile') {
 				display: none;
 			}
 
 			.close {
 				$pos: 50%;
-				$size: 16px;
+				$size: rem(16px);
 
-				position: absolute;
-				left: $pos;
-				top: $pos;
 				width: $size;
 				height: $size;
-				transform: translate(-50%);
-				font-size: 28px;
+				font-size: rem(28px);
 				line-height: 0.3;
-				color: $tertiary-snow01;
+				color: get-color(accent-snow01);
 			}
 		}
 	}
 } //.app-header-container
-
-.app-footer {
-	padding: 0 0 30px;
-	font-size: 12px;
-	line-height: 18px;
-	color: $tertiary-lgray01;
-	text-align: center;
-	background: $tertiary-black01;
-
-	.footer-container{
-		display: flex;
-		flex-direction: column;
-	}
-
-	.footer-brand {
-		padding: 25px 0 17px;
-
-		@include media('>769px') {
-			padding: 30px 0 24px;
-		}
-	}
-
-	.guide-list.reset-list {
-		order: -1;
-		margin: 0;
-		padding: 15px 26px 19px;
-		border-bottom: 1px solid rgba(97, 97, 97, 0.5);
-
-		@include media('>769px') {
-			padding: 20px 0 15px;
-		}
-
-		li {
-			display: inline-block;
-			margin: 0 0 5px;
-			padding: 0 7px 0 8px;
-
-			@include media('>769px') {
-				padding: 0 10px;
-			}
-		}
-
-		a {
-			color: inherit;
-			text-decoration: none;
-
-			&:hover {
-				color: $tertiary-white01;
-			}
-		}
-	}
-
-	.address {
-		padding: 0 22px;
-		font-style: normal;
-
-		@include media('>769px') {
-			width: 740px;
-			margin: 0 auto;
-			padding: 0;
-		}
-
-		> span {
-			display: inline-block;
-			margin: 0 0 5px;
-			padding: 0 6px 0 5px;
-
-			&:nth-child(1) {
-				&::after {
-					content: '';
-					display: block;
-				}
-			}
-
-			&:nth-child(n+4) {
-				display: block;
-			}
-
-			@include media('>769px') {
-				padding: 0 7px 0 8px;
-
-				&:nth-child(1) {
-					&::after {
-						content: none;
-					}
-				}
-
-				&:nth-child(3) {
-					&::after {
-						content: '';
-						display: block;
-					}
-				}
-
-				&:nth-child(n+4) {
-					display: inline-block;
-				}
-			}
-		}
-	}
-
-	.copyright {
-		margin: 10px 0 0;
-
-		@include media('>769px') {
-			margin: 15px 0 0;
-		}
-	}
-} //.app-footer
